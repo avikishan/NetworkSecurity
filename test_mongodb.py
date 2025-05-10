@@ -4,7 +4,11 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-uri = os.getenv('MONGO_DB_URL')
+# for key, value in os.environ.items():
+#     print(f"{key}={value}")
+
+uri = os.getenv("MONGO_DB_URL").encode('utf-8').decode('unicode_escape')
+print(uri)
 
 # Create a new client and connect to the server
 client = MongoClient(uri)
