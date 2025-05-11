@@ -11,7 +11,7 @@ from networksecurity.constant.training_pipeline import TARGET_COLUMN, DATA_TRANS
 from networksecurity.entity.config_entity import DataTransformationConfig
 from networksecurity.entity.artifact_entity import DataTransformationArtifact, DataValidationArtifact
 
-from networksecurity.utlis.main_utils.utils import save_numpy_array_data, save_object
+from networksecurity.utils.main_utils.utils import save_numpy_array_data, save_object
 
 class DataTransformation:
     def __init__(self, 

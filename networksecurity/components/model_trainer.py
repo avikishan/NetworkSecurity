@@ -6,9 +6,9 @@ import os,sys
 from networksecurity.entity.config_entity import ModelTrainerConfig
 from networksecurity.entity.artifact_entity import DataTransformationArtifact, ModelTrainerArtifact
 
-from networksecurity.utlis.main_utils.utils import save_object,load_object,load_numpy_array_object,evaluate_model
-from networksecurity.utlis.ml_utils.metrics.classification_metric import get_classification_score
-from networksecurity.utlis.ml_utils.model.estimator import NetworkModel
+from networksecurity.utils.main_utils.utils import save_object,load_object,load_numpy_array_object,evaluate_model
+from networksecurity.utils.ml_utils.metrics.classification_metric import get_classification_score
+from networksecurity.utils.ml_utils.model.estimator import NetworkModel
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import r2_score
@@ -110,7 +110,7 @@ class ModelTrainer:
         save_object(self.model_trainer_config.trained_model_file_path,obj=Network_Model)
 
         save_object('final_models/model.pkl',best_model)
-        
+
         ## Model Trainer Artifact
         model_trainer_artifact =  ModelTrainerArtifact(
             trained_model_file_path=self.model_trainer_config.trained_model_file_path,
